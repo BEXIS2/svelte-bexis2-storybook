@@ -1,0 +1,95 @@
+
+<Meta title="BEXIS2/Tutorials/UnitTests" />
+
+
+# NUnit
+
+## helpful links
+https://nunit.org/
+
+## Preparation
+- set up live share
+- show example
+  - AsciiReaderEncodingTest
+  - XmlUtilityTests
+  - ExcelReaderTests
+  - UploadHelperTests
+
+
+## Naming Conventions
+- each project has its own UnitTest Project
+  - eg DirtyProject - DirtyProject.UnitTests
+
+**Project**
+> each project has its own UnitTest Project
+- e.g. 
+  - DirtyProject - DirtyProject.UnitTests
+  - BExIS.Example - BExIS.Example.UnitTest
+
+**Class**
+> each Class has its own Test Class, with multipe tests inside
+- e.g. 
+  - Reservation - ReservationTests
+  - XmlUtility - XmlUtilityTests
+
+
+> if a method needs to many tests -> create a seperate test class
+> ClassName_MethodTests
+
+**Method**
+>for each Method you should have one or more tests in the test class 
+- [Method]_ [Scenario]_ [ExpectedBehaviour]
+- 
+
+## How Many Tests do you need?
+- Number of tests >= Number of execution Paths
+
+## Test Structure AAA
+- Arrange
+- Act
+- Assert
+
+## Assert
+https://docs.nunit.org/articles/nunit/writing-tests/assertions/classic-assertions/Assert.True.html
+
+
+## How To write tests?
+- as simple as possible
+- no logic
+  - no if
+  - foreach
+- Isolated 
+- Check incoming values
+- Change your functions to be able to write tests
+- Only what directly happens in the function should be tested.
+- Internally advanced functions must be mocked up
+- repeatable without manual changes
+  - delete what you have created for the test
+
+## what to test
+- testable code is clean - clean code is testable
+  - if your code is clean and goo structured -> easy to write tests
+- Outcome of a function
+   -  test all 
+      -  execution paths
+      -  results
+      -  right values
+
+## what not to test
+- Language Features
+- 3 party Code
+  - assume they properly work
+
+
+## Mocks
+- you can not mock static functions
+- 
+
+## in BEXIS2 using database
+- Aplication is setup in the BExIS.App.Boostrap project
+- it is possible to run the app in test mode
+ 
+### helpful classes
+- BExIS.App.Testing.TestSetupHelper
+- BExIS.Utils.Tests.Data.Helpers.DatasetHelper
+- BExIS.IO.Tests.Helper.DataGeneratorHelper
