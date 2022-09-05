@@ -1,4 +1,4 @@
-<!-- TreeView.stories.svelte -->
+<!-- Treeview.stories.svelte -->
 
 <script>
  import { Meta, Template, Story } from '@storybook/addon-svelte-csf';
